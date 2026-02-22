@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="register.css" />
-    <title>Document</title>
+    <title>Login Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="lcontainer">
@@ -18,8 +19,8 @@
           <h1>Login</h1>
           <form action="#" method="post">
             <div class="input-group">
-              <label>Email</label>
-              <input type="email" placeholder="name@email.com" required />
+              <label>Username</label>
+              <input type="text" placeholder="Enter your username" required />
             </div>
 
             <div class="input-group password-wrapper">
@@ -35,7 +36,7 @@
             <button type="submit" class="login-btn">Login</button>
 
             <div class="notregistered">
-              <span>Not Registered Yet???</span>
+              <span>Not Registered Yet?</span>
               <a href="register.html"> Register Now</a>
             </div>
           </form>
@@ -43,5 +44,6 @@
       </section>
     </div>
   </body>
+  
   <script src="./js/register.js"></script>
 </html>
