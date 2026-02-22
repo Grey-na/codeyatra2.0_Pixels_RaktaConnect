@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="register.css" />
     <title>RegisterPage</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
 
   <body>
@@ -16,26 +18,26 @@
       <section class="register-card">
         <div class="register-data">
           <h1>Register</h1>
-          <form action="#" method="post">
+          <form id="registerform">
             <div class="rname">
               <div class="rinput-group">
-                <label>First Name</label>
-                <input type="text" placeholder="Your First Name" required />
-              </div>
-              <div class="rinput-group">
-                <label>Last Name</label>
-                <input type="text" placeholder="Your Last Name" required />
+                <label>UserName</label>
+                <input type="text" id="username" placeholder="Your UserName" required />
               </div>
             </div>
 
             <div class="rinput-group">
               <label>Email</label>
-              <input type="email" placeholder="mail@gmail.com" required />
+              <input type="email" id="email" placeholder="mail@gmail.com" required />
+            </div>
+            <div class="rinput-group">
+              <label>Phone</label>
+              <input type="tel" id="phone" placeholder="98XXXXXXXX" required />
             </div>
 
             <div class="rinput-group">
               <label>BloodGroup</label>
-              <input type="text" placeholder="Your BloodGroup" required />
+              <input type="text" id="bloodgroup" placeholder="Your BloodGroup" required />
             </div>
 
             <div class="rinput-group">
