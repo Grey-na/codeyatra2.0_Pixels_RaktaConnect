@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+    <img src="./images/logo.png" alt="Rakta Connect" class="logo">
+  </a>
+
+    <nav class="nav">
+      <a href="#">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn" data-menu="hospitals">Hospitals ▾</button>
+        <div class="dropdown-content" id="hospitals">
+          <a href="https://birhospital.gov.np" target="_blank">Bir Hospital</a>
+          <a href="https://www.cityhospital.com" target="_blank">City Hospital</a>
+          <a href="https://www.grandehospital.com" target="_blank">Grande Hospital</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" data-menu="ngos">NGOs ▾</button>
+        <div class="dropdown-content" id="ngos">
+          <a href="#">Red Cross Nepal</a>
+          <a href="#">Lions Club</a>
+          <a href="#">Rotary Club</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" data-menu="bloodbanks">Blood Banks ▾</button>
+        <div class="dropdown-content" id="bloodbanks">
+          <a href="#">Central Blood Bank</a>
+          <a href="#">City Blood Center</a>
+          <a href="#">Community Blood Bank</a>
+        </div>
+      </div>
+    <a href ="criteria.html">Criterias for Donors</a>
+      <a href="#">About Us</a>
+    </nav>
+
+    <button class="btn-signing">LogIn</button>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-image-wrap">
+    <img src="./images/blooddrop.png" alt="Blood DROP Image" class="main-glove-image"/>
+  </div>
+  <div class="hero-content">
+    <h2>Blood Shouldn’t Be Hard to Find.</h2>
+    <p>
+      We connect donors, hospitals, and blood banks in real-time  
+      so no one has to wait in an emergency.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <h3>2s</h3>
+        <span>Someone needs blood</span>
+      </div>
+      <div class="stat">
+        <h3>3 Lives</h3>
+        <span>Saved per donation</span>
+      </div>
+      <div class="stat">
+        <h3>24/7</h3>
+        <span>Emergency access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Section -->
+<section class="actions-section">
+  <div class="action-card donor">
+    <h3>Become a Donor</h3>
+    <p>Register once. Save lives whenever you can.</p>
+    <button onclick="window.location.href='register.html'">Register as Donor</button>
+  </div>
+
+  <div class="action-card request">
+    <h3>Request Blood</h3>
+    <p>Find matching donors and nearby blood banks instantly.</p>
+    <button onclick="window.location.href='register.html'">Request Blood</button>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  
+
+ <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.58/build/spline-viewer.js"></script>
+ <div class="spline-wrapper">
+  <spline-viewer url="https://prod.spline.design/Vx17CJDZRbiKh5cA/scene.splinecode"></spline-viewer>
+ </div>
+
+</section>
+<script src="js/script.js"></script>
+<section class="events-section">
+    <h2 class="section-title">Upcoming Blood Donation Drives</h2>
+    
+    <div class="events-grid">
+        <div class="event-card" data-aos="fade-up">
+            <div class="event-date">
+                <span class="day">25</span>
+                <span class="month">FEB</span>
+            </div>
+            <div class="event-info">
+                <h3>City Central Mall Drive</h3>
+                <p>📍 Kathmandu, Nepal</p>
+                <p>⏰ 10:00 AM - 4:00 PM</p>
+                <button class="remind-btn">Register for Event</button>
+            </div>
+        </div>
+
+        <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-date">
+                <span class="day">02</span>
+                <span class="month">MAR</span>
+            </div>
+            <div class="event-info">
+                <h3>Lions Club Blood Camp</h3>
+                <p>📍 Patan Durbar Square</p>
+                <p>⏰ 09:00 AM - 3:00 PM</p>
+                <button class="remind-btn">Register for Event</button>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="main-footer">
+    <div class="partner-carousel">
+        <p>Our Affiliated Partners</p>
+        <div class="partner-overflow">
+            <div class="partner-track">
+                <img src="./images/bir.png" alt="Partner 1">
+                <img src="./images/grande.png" alt="Partner 2">
+                <img src="./images/nrcs.png" alt="Partner 3">
+                <img src="./images/bir.png" alt="Partner 1">
+                <img src="./images/grande.png" alt="Partner 2">
+                <img src="./images/nrcs.png" alt="Partner 3">
+                <img src="./images/bir.png" alt="Partner 1">
+                <img src="./images/grande.png" alt="Partner 2">
+                <img src="./images/nrcs.png" alt="Partner 3">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        <div class="footer-column logo-col">
+            <img src="./images/logo.png" alt="Logo" class="footer-logo">
+            <p>Connecting lives through every drop. Nepal's most trusted blood donation network.</p>
+        </div>
+
+        <div class="footer-column contact-col">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>📍 Lalitpur, Nepal</li>
+                <li>📞 +977 9841446364</li>
+                <li>✉️ info@raktaconnect.org</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 RaktaConnect. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

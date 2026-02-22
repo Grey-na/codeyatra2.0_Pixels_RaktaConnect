@@ -1,0 +1,215 @@
+body {
+  background-color: rgb(251, 235, 238);
+}
+.lcontainer {
+  display: flex;
+  justify-content: left; 
+  align-items: center; 
+  min-height: calc(100vh - 70px);
+}
+
+.login-card {
+  place-content: center;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 1rem;
+  width: 340px;
+  border-radius: 15px;
+  height: 360px;
+}
+label {
+  font-weight: 700;
+}
+.login-card h1 {
+  text-align: center;
+}
+.image img {
+  width: 550px;
+}
+.login-btn {
+  background-color: #9b0a0a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+  width: 95%;
+  place-content: center;
+}
+.login-btn:hover {
+  background-color: #7a0808;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 5px;
+}
+.input-group input {
+  width: 80%;
+  padding: 12px 40px 12px 14px; 
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+.extra-options {
+  margin-top: 20px;
+}
+.extra-options a {
+  color: black;
+}
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 80%;
+  padding: 12px 40px 12px 14px; 
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 68%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.notregistered {
+  margin-top: 17px;
+  color: black;
+}
+.notregistered a {
+  color: black;
+}
+/* /Resister/ */
+.rcontainer {
+  display: flex;
+  justify-content: left; 
+  align-items: center; 
+  min-height: calc(100vh - 70px);
+}
+.register-card {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  width: 480px; 
+  box-sizing: border-box;
+}
+.rname {
+  display: flex;
+  gap: 16px;
+}
+.rname .rinput-group {
+  flex: 1; 
+}
+.register-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #9b0a0a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.register-btn:hover {
+  background-color: #7a0808;
+}
+.rinput-group {
+  gap: 9px;
+  margin-top: 11px;
+}
+.rinput-group input,
+.rinput-group select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: white;
+  box-sizing: border-box; 
+}
+.rextra-options {
+  margin-top: 20px;
+  gap: 12px;
+}
+.password-wrapper,
+.confirmpassword-wrapper {
+  position: relative;
+}
+
+.password-wrapper input,
+.confirmpassword-wrapper input {
+  width: 100%;
+  padding: 12px 44px 12px 14px;
+  box-sizing: border-box;
+}
+
+.rimage img{
+  width: 550px  ;
+}
+.toggle-confirmpassword {
+  position: absolute;
+  right: 12px;
+  top: 68%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#roleSelect {
+  position: absolute;
+  opacity: 0;
+  pointer-events: all;
+  width: 100%;
+  height: 100%;
+}
+.forgotPassword{
+  margin-top: 12px;
+}
+.forgotPassword a{
+  color: black;
+}
+
+.rinput-group select {
+  width: 420px;
+  padding-top: 2px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: white;
+  appearance: none;
+}
+
+.rinput-group {
+  position: relative;
+}
+.rinput-group select {
+  padding-right: 40px; 
+}
+.register-data{
+    margin-top: -30px; 
+}
+
+.select-wrapper{
+    position: relative;
+    width: 100%;
+}
+.select-wrapper::after{
+      position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9b0a0a;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
