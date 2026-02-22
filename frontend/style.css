@@ -436,5 +436,60 @@ spline-viewer {
     background: #7a0b0b;
     color: white;
 }
+#criteria-text-a,
+#criteria-text-b,
+#criteria-text-c {
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  width: 380px;
+  background-color: rgb(210, 215, 219);
+  border-radius: 8px;
+  align-items: center;
+  
+}
+#criteria-text-a:hover{
+ transform: translateY(-4px);
+}
+#criteria-text-b:hover{
+ transform: translateY(-4px);
+}
+#criteria-text-c:hover{
+ transform: translateY(-4px);
+}
+#criteria-text-d,
+#criteria-text-e {
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  width: 380px;
+  background-color: rgb(210, 215, 219);
+  border-radius: 8px;
+  align-items: center;
+  margin-top: 18px;
+}
+#criteria-text-d:hover{
+ transform: translateY(-4px);
+}
+#criteria-text-e:hover{
+ transform: translateY(-4px);
+}
+#criteria-text-a span,
+#criteria-text-b span,
+#criteria-text-c span,
+#criteria-text-d span,
+#criteria-text-e span {
+  font-weight: 600; /* try 500, 600, 700 */
+}
+.cbutton {
+  background-color: #9b0a0a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+}
 
+.cbutton:hover {
+  background-color: #7a0808;
+}
 
