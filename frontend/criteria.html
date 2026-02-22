@@ -7,21 +7,27 @@
     <link rel="stylesheet" href="criteria.css" />
     <title>Criteria</title>
   </head>
-  <body>
-    <header>
+  <header>
     <a href="index.html">
-    <img src="./images/logo.png" alt="Rakta Connect" class="logo">  
+      <img src="./images/logo.png" alt="Rakta Connect" class="logo" />
     </a>
+    <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">
+      Donate blood
+    </h1>
 
     <nav class="nav">
-      <a href="index.html">Home</a>
+      <a href="#">Home</a>
 
       <div class="dropdown">
         <button class="dropbtn" data-menu="hospitals">Hospitals ▾</button>
         <div class="dropdown-content" id="hospitals">
           <a href="https://birhospital.gov.np" target="_blank">Bir Hospital</a>
-          <a href="https://www.cityhospital.com" target="_blank">City Hospital</a>
-          <a href="https://www.grandehospital.com" target="_blank">Grande Hospital</a>
+          <a href="https://www.cityhospital.com" target="_blank"
+            >City Hospital</a
+          >
+          <a href="https://www.grandehospital.com" target="_blank"
+            >Grande Hospital</a
+          >
         </div>
       </div>
 
@@ -42,12 +48,14 @@
           <a href="#">Community Blood Bank</a>
         </div>
       </div>
-    <a href ="criteria.html">Criterias for Donors</a>
+      <a href="criteria.html">Criterias for Donors</a>
       <a href="#">About Us</a>
     </nav>
 
     <button class="btn-signing">LogIn</button>
   </header>
+
+  <body>
     <div class="cbody">
       <h1>Essential Blood Donation Guidelines</h1>
 
@@ -75,7 +83,9 @@
               fully elapsed.
             </li>
           </ol>
-          <button class="cbutton" classonclick="readCriteria_a()">🔊 Listen to Criteria</button>
+          <button class="cbutton" classonclick="readCriteria_a()">
+            🔊 Listen to Criteria
+          </button>
         </div>
 
         <div id="criteria-text-b">
@@ -102,7 +112,9 @@
               supply.
             </li>
           </ol>
-          <button class="cbutton" onclick="readCriteria_b()">🔊 Listen to Criteria</button>
+          <button class="cbutton" onclick="readCriteria_b()">
+            🔊 Listen to Criteria
+          </button>
         </div>
 
         <div id="criteria-text-c">
@@ -124,7 +136,9 @@
               10km radius of the requesting hospital to ensure timely delivery.
             </li>
           </ol>
-          <button class="cbutton" onclick="readCriteria_c()">🔊 Listen to Criteria</button>
+          <button class="cbutton" onclick="readCriteria_c()">
+            🔊 Listen to Criteria
+          </button>
         </div>
       </section>
       <section class="actions-section">
@@ -146,7 +160,9 @@
               their logistical data at any time.
             </li>
           </ol>
-          <button class="cbutton" onclick="readCriteria_d()">🔊 Listen to Criteria</button>
+          <button class="cbutton" onclick="readCriteria_d()">gi
+            🔊 Listen to Criteria
+          </button>
         </div>
 
         <div id="criteria-text-e">
@@ -168,10 +184,55 @@
               transfusion delay of 2 hours and 15 minutes
             </li>
           </ol>
-          <button class="cbutton" onclick="readCriteria_e()">🔊 Listen to Criteria</button>
+          <button class="cbutton" onclick="readCriteria_e()">
+            🔊 Listen to Criteria
+          </button>
         </div>
+
       </section>
+
     </div>
-    <script src="js/script.js"></script>
+
   </body>
+
+  <script src="criteria.js"></script>
+  <footer class="main-footer">
+    <div class="partner-carousel">
+      <p>Our Affiliated Partners</p>
+      <div class="partner-track">
+        <img src="./images/nrcs.png" alt="Partner" />
+        <img src="./images/bir.png" alt="Partner" />
+        <img src="./images/grande.png" alt="Partner" />
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-content">
+      <div class="footer-column logo-col">
+        <img
+          src="./images/logo.png"
+          alt="RaktaConnect Logo"
+          class="footer-logo"
+        />
+        <p>
+          Connecting lives through every drop. Nepal's most trusted blood
+          donation network.
+        </p>
+      </div>
+
+      <div class="footer-column contact-col">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>📍 Lalitpur, Bagmati, Nepal</li>
+          <li>📞 +977 9841446264</li>
+          <li>✉️ info@raktaconnect.org</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 RaktaConnect. All Rights Reserved.</p>
+    </div>
+  </footer>
 </html>
