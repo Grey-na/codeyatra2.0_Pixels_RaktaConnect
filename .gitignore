@@ -1,0 +1,7 @@
+backend/.env
+
+# Node.js dependencies
+backend/node_modules/
+
+# npm package lock files
+backend/package-lock.json
