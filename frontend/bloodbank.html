@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Available Blood Banks</title>
+  <link rel="stylesheet" href="bloodbanks.css"/>
+</head>
+<body>
+
+  <header class="bb-header">
+    <h1>Find Available Blood</h1>
+    <p>Showing blood banks that have the blood type you need</p>
+  </header>
+
+  <section class="filter-section">
+    <label for="bloodType">Blood Type:</label>
+    <select id="bloodType">
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+    </select>
+  </section>
+
+  <!-- Blood Banks List -->
+  <section class="banks-grid">
+    <!-- Card 1 -->
+    <div class="bank-card" data-blood="A+ O+ B+">
+      <h3>Central Blood Bank</h3>
+      <p><strong>Available:</strong> A+, O+, B+</p>
+      <p><strong>Location:</strong> Kathmandu</p>
+      <button>View Details</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bank-card" data-blood="O- AB-">
+      <h3>City Blood Center</h3>
+      <p><strong>Available:</strong> O-, AB-</p>
+      <p><strong>Location:</strong> Lalitpur</p>
+      <button>View Details</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bank-card" data-blood="A- B- AB+">
+      <h3>Community Blood Bank</h3>
+      <p><strong>Available:</strong> A-, B-, AB+</p>
+      <p><strong>Location:</strong> Bhaktapur</p>
+      <button>View Details</button>
+    </div>
+  </section>
+
+
+</body>
+</html>
