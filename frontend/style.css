@@ -441,35 +441,81 @@ spline-viewer {
 }
 
 
-.footer-divider {
-    border: 0;
-    border-top: 1px solid #333;
+.main-footer {
+    background: linear-gradient(135deg, #7a0b0b 0%, #4a0606 100%);
+    color: #ffffff;
+    padding: 50px 5% 20px;
+    margin-top: 0;
+}
+
+
+.partner-carousel {
+    text-align: center;
     margin-bottom: 40px;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+.partner-carousel p {
+    color: #ffcccc;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 
-.footer-column {
-    flex: 1;
-    min-width: 250px;
+.partner-overflow {
+    overflow: hidden; 
+    width: 100%;
+    position: relative;
+}
+
+.partner-track {
+    display: flex;
+    width: max-content; 
+    animation: scrollInfinite 15s linear infinite;
+}
+
+.partner-track img {
+    height: 60px; 
+    width: auto;
+    margin: 0 50px; 
+    filter: brightness(0) invert(1); 
+    opacity: 0.8;
+}
+
+
+.partner-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .footer-logo {
-    height: 50px; 
+    height: 50px;
     margin-bottom: 15px;
+    filter: brightness(0) invert(1); 
 }
 
 .footer-column h3 {
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #ffcccc;
 }
 
 .footer-column ul {
@@ -478,27 +524,16 @@ spline-viewer {
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
-    color: #ccc;
     font-size: 0.9rem;
+    margin-bottom: 8px;
+    opacity: 0.9;
 }
-
-.footer-column a {
-    color: #ccc;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-column a:hover {
-    color: #9b1111;
-}
-
 .footer-bottom {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
     font-size: 0.8rem;
-    color: #666;
+    color: #ffffff;
 }
 
