@@ -38,7 +38,6 @@ actionCards.forEach(card => {
   actionObserver.observe(card);
 });
 
-// Reveal EVENT cards on scroll
 const eventCards = document.querySelectorAll(".event-card");
 
 const eventObserver = new IntersectionObserver(
