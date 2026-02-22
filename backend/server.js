@@ -20,6 +20,7 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 app.use("/api/rewards", require("./routes/rewards"));
 
+
 app.use("/api/sos", require("./routes/sos"));
 
 app.post("/api/chat", async (req, res) => {
@@ -60,6 +61,8 @@ app.post("/api/chat", async (req, res) => {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "chatbot.html"));
 });
+
+
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
