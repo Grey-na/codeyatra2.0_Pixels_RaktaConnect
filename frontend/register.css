@@ -1,0 +1,152 @@
+body {
+  background-color: rgb(251, 235, 238);
+}
+.lcontainer {
+  display: flex;
+  justify-content: left; /* horizontal center */
+  align-items: center; /* vertical center */
+  min-height: calc(100vh - 70px);
+}
+.login-card {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  width: 480px; /* fixed card width so everything aligns */
+  box-sizing: border-box;
+}
+.rname {
+  display: flex;
+  gap: 16px;
+}
+.rname .input-group {
+  flex: 1; /* each takes equal width */
+}
+label {
+  font-weight: 700;
+}
+.login-card h1 {
+  text-align: center;
+}
+.register-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #9b0a0a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.login-btn:hover {
+  background-color: #7a0808;
+}
+.input-group {
+  gap: 9px;
+  margin-top: 11px;
+}
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: white;
+  box-sizing: border-box; /* critical - includes padding in width */
+}
+.extra-options {
+  margin-top: 20px;
+  gap: 12px;
+}
+.password-wrapper,
+.confirmpassword-wrapper {
+  position: relative;
+}
+
+.password-wrapper input,
+.confirmpassword-wrapper input {
+  width: 100%;
+  padding: 12px 44px 12px 14px;
+  box-sizing: border-box;
+}
+
+.image img{
+  width: 570px  ;
+}
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 68%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.toggle-confirmpassword {
+  position: absolute;
+  right: 12px;
+  top: 68%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#roleSelect {
+  position: absolute;
+  opacity: 0;
+  pointer-events: all;
+  width: 100%;
+  height: 100%;
+}
+.notregistered {
+  margin-top: 17px;
+  color: black;
+}
+.notregistered a {
+  color: black;
+}
+.forgotPassword {
+  margin-top: 12px;
+}
+.forgotPassword a {
+  color: black;
+}
+
+.input-group select {
+  width: 420px;
+  padding-top: 2px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: white;
+  appearance: none;
+}
+
+.input-group {
+  position: relative;
+}
+.input-group select {
+  padding-right: 40px; /* space for custom arrow */
+}
+.login-data{
+    margin-top: -30px; 
+}
+
+.select-wrapper{
+    position: relative;
+    width: 100%;
+}
+.select-wrapper::after{
+      position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9b0a0a;
+  font-size: 1.1rem;
+  pointer-events: none;
+}

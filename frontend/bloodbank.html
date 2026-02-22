@@ -54,6 +54,20 @@
     </div>
   </section>
 
+  <script>
+    // Frontend filter logic
+    const select = document.getElementById("bloodType");
+    const cards = document.querySelectorAll(".bank-card");
+
+    select.addEventListener("change", () => {
+      const selected = select.value;
+
+      cards.forEach(card => {
+        const available = card.dataset.blood.split(" ");
+        card.style.display = available.includes(selected) ? "block" : "none";
+      });
+    });
+  </script>
 
 </body>
 </html>
