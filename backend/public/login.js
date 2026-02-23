@@ -1,14 +1,18 @@
 const axios = window.axios;
+
 const loginbtn = document.getElementsByClassName("login-btn")[0];
+const loginErrorEl = document.getElementById("loginError");
+const loginSuccessEl = document.getElementById("loginSuccess");
 
 loginbtn.addEventListener("click", async function (e) {
   e.preventDefault();
-  console.log("login btn clicked");
+
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
-  console.log("Form values: ", { username, password });
 
-  // document.getElementById("loginError").textContent = "";
+  // clear old messages
+  if (loginErrorEl) loginErrorEl.textContent = "";
+  if (loginSuccessEl) loginSuccessEl.textContent = "";
 
   try {
     const response = await axios.post("http://localhost:5000/api/auth/login", {
@@ -19,7 +23,7 @@ loginbtn.addEventListener("click", async function (e) {
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("role", response.data.role);
 
-    alert("Login successful! 🎉");
+    if (loginSuccessEl) loginSuccessEl.textContent = "Login successful! 🎉";
 
     const role = response.data.role;
 
@@ -27,18 +31,20 @@ loginbtn.addEventListener("click", async function (e) {
       donor: "index_donor.html",
       ngo: "index_ngo.html",
       bloodbank: "index_bloodbank.html",
-      others: "index.html",
+      hospital: "index_hospital.html",
+      csr: "index_csr.html",
+      admin: "index_admin.html",
     };
 
-window.location.href = rolePages[role] || "index.html";
+    window.location.href = rolePages[role] || "index.html";
   } catch (error) {
     console.log("error in login js: ", error);
-    if (error.response && error.response.data) {
-      document.getElementById("loginError").textContent =""
-        error.response.data.message;
-    } else {
-      document.getElementById("loginError").textContent =
-        "Cannot connect to server. Is the backend running?";
-    }
+
+    const msg =
+      error.response?.data?.message ||
+      "Cannot connect to server. Is the backend running?";
+
+    if (loginErrorEl) loginErrorEl.textContent = msg;
+    else alert(msg);
   }
 });

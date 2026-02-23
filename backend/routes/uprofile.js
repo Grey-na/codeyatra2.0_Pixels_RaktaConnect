@@ -1,51 +1,30 @@
-// Get logged-in user profile
+const express = require("express");
+const router = express.Router();
+const db = require("../config/db");
+const authMiddleware = require("../middleware/authMiddleware");
+
 router.get("/profile", authMiddleware, (req, res) => {
-  const userId = req.user.id;
+  const userId = req.user?.id;
 
-  db.query(
-    "SELECT id, name, email, reward_points FROM users WHERE id=?",
-    [userId],
-    (err, results) => {
-      if (err) return res.status(500).json({ message: "Server error" });
-      if (results.length === 0)
-        return res.status(404).json({ message: "User not found" });
+  if (!userId) return res.status(401).json({ message: "Unauthorized" });
 
-      res.json(results[0]);
+  const q = `
+    SELECT id, username, email, phone, role, age, blood_type, reward_points
+    FROM users
+    WHERE id = ?
+    LIMIT 1
+  `;
+
+  db.query(q, [userId], (err, results) => {
+    if (err) {
+      console.error("[profile] DB error:", err);
+      return res.status(500).json({ message: "DB error", error: err.sqlMessage });
     }
-  );
+    if (!results || results.length === 0) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    return res.json(results[0]);
+  });
 });
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-function UserProfile() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    axios.get("http://localhost:5000/api/profile", {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    .then(res => {
-      setUser(res.data);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-  }, []);
-
-  if (!user) return <p>Loading...</p>;
-
-  return (
-    <div>
-      <h2>My Profile</h2>
-      <p>Name: {user.name}</p>
-      <p>Email: {user.email}</p>
-      <h3>Earned Points: {user.reward_points}</h3>
-    </div>
-  );
-}
-
-export default UserProfile;
+module.exports = router;
