@@ -90,3 +90,15 @@ function readCriteria_e() {
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
+
+window.onload = function () {
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
+  document.body.classList.add("popup-open");
+};
+
+function closePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "none";
+  document.body.classList.remove("popup-open");
+}
