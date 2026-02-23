@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="loginpage-registerpage.css" />
+    <title>Donor Registration</title>
+  </head>
+
+  <body>
+    <div class="donor-container">
+      <div class="donor-image">
+        <img src="./images/donor registration.png" alt="donor image" />
+      </div>
+      <section class="donor-card">
+        <div class="donor-data">
+          <h1>Donor Registration Form</h1>
+          <form action="#" method="post">
+            <!-- First Name & Last Name -->
+            <div class="donor-name-row">
+              <div class="donor-input-group">
+                <label for="donorFirstName">First Name</label>
+                <input
+                  id="donorFirstName"
+                  type="text"
+                  placeholder="Your First Name"
+                  required
+                />
+              </div>
+              <div class="donor-input-group">
+                <label for="donorLastName">Last Name</label>
+                <input
+                  id="donorLastName"
+                  type="text"
+                  placeholder="Your Last Name"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Age & Weight -->
+            <div class="donor-age-weight-row">
+              <div class="donor-input-group">
+                <label for="donorAge">Age</label>
+                <input
+                  id="donorAge"
+                  type="number"
+                  placeholder="Your Age"
+                  required
+                />
+              </div>
+              <div class="donor-input-group">
+                <label for="donorWeight">Weight (kg)</label>
+                <input
+                  id="donorWeight"
+                  type="number"
+                  placeholder="Your Weight"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="donor-input-group">
+              <label for="donorEmail">Email</label>
+              <input
+                id="donorEmail"
+                type="email"
+                placeholder="mail@gmail.com"
+                required
+              />
+            </div>
+
+            <!-- Blood Group Dropdown -->
+            <div class="donor-input-group">
+              <label for="donorBloodGroup">Blood Group</label>
+              <div class="donor-select-wrapper">
+                <select id="donorBloodGroup" name="bloodGroup" required>
+                  <option value="" disabled selected>
+                    Select your blood group
+                  </option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Last Donation Date -->
+            <div class="donor-input-group">
+              <label for="donorLastDonation">Last Donation Date</label>
+              <input
+                id="donorLastDonation"
+                type="date"
+                name="lastDonationDate"
+                max=""
+                placeholder="If applicable"
+              />
+              <small class="donor-date-hint"
+                >Leave empty if you have never donated before.</small
+              >
+            </div>
+
+            <div class="donor-consent-group">
+              <label class="donor-consent-label">
+                <input
+                  type="checkbox"
+                  id="donorSosConsent"
+                  name="sosConsent"
+                  required
+                />
+                I agree to receive urgent SOS blood request alerts when my blood
+                type is critically needed. My willingness to respond could save
+                a life. 🩸
+              </label>
+            </div>
+
+            <button type="submit" class="donor-register-btn">
+              Register as Donor
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="register.js"></script>
+</html>

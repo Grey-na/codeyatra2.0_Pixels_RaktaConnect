@@ -16,6 +16,13 @@ const backendDir = __dirname;
 const parentDir = path.dirname(backendDir);
 const frontendDir = path.join(parentDir, "frontend");
 
+const rewardRoutes = require("./routes/rewards");
+
+const donationRoutes = require("./routes/donation"); 
+
+
+app.use("/api/rewards", rewardRoutes);
+app.use("/api/donations", donationRoutes);
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "backend", "public")));
