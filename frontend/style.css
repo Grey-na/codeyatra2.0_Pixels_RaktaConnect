@@ -26,6 +26,7 @@ body{
     line-height: 1.5;
 }
 
+
 .container{
     width:100%;
     margin: 0 auto;
@@ -34,12 +35,12 @@ body{
     overflow: hidden;
 }
 header {
-  width: 100vw;                  /* FULL SCREEN WIDTH */
+  width: 100vw;                  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 3rem;            /* smaller height */
-  background: linear-gradient(90deg, #7a0b0b, #9b1111); /* nicer red */
+  padding: 12px 3rem;            
+  background: linear-gradient(90deg, #7a0b0b, #9b1111); 
   color: white;
   position: sticky;
   top: 0;
@@ -440,6 +441,56 @@ spline-viewer {
     100% { transform: translateX(calc(-150px * 4)); }
 }
 
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  
+  z-index: 99999; /* must be higher than header */
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  
+  width: 320px;
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+  color: #4a0606;
+  font-family: sans-serif
+}
+.popup-content a{
+  color: black;
+  text-decoration: none;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.popup-content span{
+  font-weight: 600;
+}
+#popup-btn {
+  background-color: #4a0606;
+  color: white;
+  border-radius: 20px;
+  height: 42px;
+  width: 72px;
+}
+#popup-btn:hover{
+  background-color: #7a0b0b;
+}
 
 .main-footer {
     background: linear-gradient(135deg, #7a0b0b 0%, #4a0606 100%);
