@@ -6,13 +6,24 @@
   <title>hackathon</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="../backend/public/chatbot.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
+ <div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>!!Emergency Blood Needed!!</h2>
+    <p><span>Location:</span> <a href="https://maps.app.goo.gl/tFYjbKBBTc1VMbyw6">Lalitpur,Kathmandu</a></p>
+    <p><span>Blood Group:</span> A-</p>
+    <button id="popup-btn">Details</button>
+  </div>
+</div>
 <body>
-
   <header>
     <a href="index.html">
     <img src="./images/logo.png" alt="Rakta Connect" class="logo">
   </a>
+ 
 
     <nav class="nav">
       <a href="#">Home</a>
@@ -35,16 +46,9 @@
         </div>
       </div>
 
-      <div class="dropdown">
-        <button class="dropbtn" data-menu="bloodbanks">Blood Banks ▾</button>
-        <div class="dropdown-content" id="bloodbanks">
-          <a href="#">Central Blood Bank</a>
-          <a href="#">City Blood Center</a>
-          <a href="#">Community Blood Bank</a>
-        </div>
-      </div>
+    <a href="bloodbank.html">Blood Banks</a>  
     <a href ="criteria.html">Criterias for Donors</a>
-      <a href="#">About Us</a>
+      <a href="aboutus.html">About Us</a>
     </nav>
 
     <a href="login.html"><button class="btn-signing">LogIn</button></a>
@@ -175,6 +179,41 @@
         <p>&copy; 2026 RaktaConnect. All Rights Reserved.</p>
     </div>
 </footer>
+<!-- Chatbot Toggle Button -->
+<button id="chatToggleBtn" onclick="toggleChat()">
+    <i class="fas fa-comment-dots"></i>
+</button>
+
+<!-- Chatbot Container -->
+<div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+        <h2><i class="fas fa-robot"></i> रक्त CONNECT</h2>
+        <div class="controls">
+            <button id="micBtn" title="Voice Input"><i class="fas fa-microphone"></i></button>
+            <button id="ttsBtn" title="Toggle Text-to-Speech" class="active" onclick="toggleTTSAndStop()"><i class="fas fa-volume-up"></i></button>
+        </div>
+    </div>
+
+    <div id="chat-box" class="chat-box">
+        <div class="message bot-message">Hello! What can I help with?</div>
+    </div>
+
+    <div id="image-preview-container" class="hidden">
+        <img id="image-preview" src="" alt="Preview">
+        <button id="remove-image"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="input-area">
+        <label for="image-input" class="icon-btn"><i class="fas fa-image"></i></label>
+        <input type="file" id="image-input" accept="image/*" hidden>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- Chatbot Script -->
+<script src="../backend/public/chatbot.js"></script>
+
 
 </body>
 </html>
