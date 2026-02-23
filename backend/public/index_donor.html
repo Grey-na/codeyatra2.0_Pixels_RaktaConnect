@@ -6,9 +6,24 @@
     <title>hackathon</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="chatbot.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="register.js"></script>
   </head>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2>!!Emergency Blood Needed!!</h2>
+      <p>
+        <span>Location:</span>
+        <a href="https://maps.app.goo.gl/tFYjbKBBTc1VMbyw6"
+          >Lalitpur,Kathmandu</a>
+      </p>
+      <p><span>Blood Group:</span> A-</p>
+      <button id="popup-btn">Details</button>
+    </div>
+  </div>
   <body>
     <header>
       <a href="index.html">
@@ -44,10 +59,10 @@
 
       <a href="bloodbank.html">Blood Banks</a>
         <a href="criteria.html">Criterias for Donors</a>
-        <a href="#">About Us</a>
+        <a href="aboutus.html">About Us</a>
       </nav>
 
-<a href="/profile" class="user-icon-btn">
+<a href="profile.html" class="user-icon-btn">
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="8" r="4"/>
     <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
@@ -97,10 +112,10 @@
       </div>
 
       <div class="action-card request">
-        <h3>Request Blood</h3>
-        <p>Find matching donors and nearby blood banks instantly.</p>
+        <h3>Become a Volunteer</h3>
+        <p>Be a part of inclusive community.</p>
         <button onclick="window.location.href = 'register.html'">
-          Request Blood
+          Become a Volunteer
         </button>
       </div>
 
@@ -191,5 +206,39 @@
         <p>&copy; 2026 RaktaConnect. All Rights Reserved.</p>
       </div>
     </footer>
+        <!-- Chatbot Toggle Button -->
+<button id="chatToggleBtn" onclick="toggleChat()">
+    <i class="fas fa-comment-dots"></i>
+</button>
+
+<!-- Chatbot Container -->
+<div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+        <h2><i class="fas fa-robot"></i> रक्त CONNECT</h2>
+        <div class="controls">
+            <button id="micBtn" title="Voice Input"><i class="fas fa-microphone"></i></button>
+            <button id="ttsBtn" title="Toggle Text-to-Speech" class="active" onclick="toggleTTSAndStop()"><i class="fas fa-volume-up"></i></button>
+        </div>
+    </div>
+
+    <div id="chat-box" class="chat-box">
+        <div class="message bot-message">Hello! What can I help with?</div>
+    </div>
+
+    <div id="image-preview-container" class="hidden">
+        <img id="image-preview" src="" alt="Preview">
+        <button id="remove-image"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="input-area">
+        <label for="image-input" class="icon-btn"><i class="fas fa-image"></i></label>
+        <input type="file" id="image-input" accept="image/*" hidden>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+
+    <script src="chatbot.js"></script>
   </body>
 </html>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Available Blood Banks</title>
-    <link rel="stylesheet" href="bloodbank.css" />
+    <link rel="stylesheet" href="aboutus.css" />
+    <title>About Us-RaktaConnect</title>
   </head>
   <header>
     <a href="index.html">
@@ -12,7 +12,7 @@
     </a>
 
     <nav class="nav">
-      <a href="index.html">Home</a>
+      <a href="#">Home</a>
 
       <div class="dropdown">
         <button class="dropbtn" data-menu="hospitals">Hospitals ▾</button>
@@ -36,70 +36,65 @@
         </div>
       </div>
 
-      <a href="bloodbank.html">Blood Banks</a>
+      <div class="dropdown">
+        <button class="dropbtn" data-menu="bloodbanks">Blood Banks ▾</button>
+        <div class="dropdown-content" id="bloodbanks">
+          <a href="#">Central Blood Bank</a>
+          <a href="#">City Blood Center</a>
+          <a href="#">Community Blood Bank</a>
+        </div>
+      </div>
       <a href="criteria.html">Criterias for Donors</a>
-      <a href="aboutus.html">About Us</a>
+      <a href="#">About Us</a>
     </nav>
 
     <button class="btn-signing">LogIn</button>
   </header>
+
   <body>
-    <section class="bb-header">
-      <h1>Find Available Blood</h1>
-      <p>Showing blood banks that have the blood type you need</p>
-    </section>
+    <div class="acontainer">
+      <h1>Every Drop Counts. Every Life Matters.</h1>
 
-    <section class="filter-section">
-      <label for="bloodType">Blood Type:</label>
-  <div class="select-blood-wrapper">
-    <select id="bloodType">
-      <option value="A+">A+</option>
-      <option value="A-">A-</option>
-      <option value="B+">B+</option>
-      <option value="B-">B-</option>
-      <option value="O+">O+</option>
-      <option value="O-">O-</option>
-      <option value="AB+">AB+</option>
-      <option value="AB-">AB-</option>
-    </select>
-    </section>
+      <section class="aboutus">
+        <div class="aboutus-a">
+          <h2>About US</h2>
+          <p>
+            <span>RaktaConnect</span> was born from a simple but powerful belief
+            that no one should lose their life because the right blood wasn't
+            available at the right time. We are a digital platform built to
+            bridge the gap between blood donors, NGOs, hospitals, blood banks,
+            and corporate partners, making blood donation more accessible,
+            organized, and impactful than ever before.
+          </p>
+        </div>
+        <div class="aboutus-b">
+          <img src="./images/aboutus-image.png" alt="About us image" />
+        </div>
+      </section>
 
-    <!-- Blood Banks List -->
-    <section class="banks-grid">
-      <!-- Card 1 -->
-      <div class="bank-card" data-blood="A+ O+ B+">
-        <h3>Central Blood Bank</h3>
-        <p><strong>Available:</strong> A+, O+, B+</p>
-        <p><strong>Location:</strong> Kathmandu</p>
-        <button class="blood-bankbtn">View Details</button>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bank-card" data-blood="O- AB-">
-        <h3>City Blood Center</h3>
-        <p><strong>Available:</strong> O-, AB-</p>
-        <p><strong>Location:</strong> Lalitpur</p>
-        <button class="blood-bankbtn">View Details</button>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bank-card" data-blood="A- B- AB+">
-        <h3>Community Blood Bank</h3>
-        <p><strong>Available:</strong> A-, B-, AB+</p>
-        <p><strong>Location:</strong> Bhaktapur</p>
-        <button class="blood-bankbtn">View Details</button>
-      </div>
-    </section>
-
-    
+      <section class="mission">
+        <div class="mission-a">
+          <img src="./images/mission.png" alt="Mission Image" />
+        </div>
+        <div class="mission-b">
+          <h2>Our Mission</h2>
+          <p>
+            To create a digitally inclusive ecosystem where finding and donating
+            blood is seamless, transparent, and rewarding -> for everyone,
+            regardless of language, ability, or location
+          </p>
+        </div>
+      </section>
+    </div>
   </body>
 
-  <script src="./js/bloodbank.js"></script>
+  <script src="aboutus.js"></script>
+
   <footer class="main-footer">
     <div class="partner-carousel">
       <p>Our Affiliated Partners</p>
       <div class="partner-track">
-         <img src="./images/bir.png" alt="Partner 1">
+          <img src="./images/bir.png" alt="Partner 1">
                 <img src="./images/grande.png" alt="Partner 2">
                 <img src="./images/nrcs.png" alt="Partner 3">
                 <img src="./images/bir.png" alt="Partner 1">

@@ -11,6 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="register.js"></script>
   </head>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2>!!Emergency Blood Needed!!</h2>
+      <p>
+        <span>Location:</span>
+        <a href="https://maps.app.goo.gl/tFYjbKBBTc1VMbyw6"
+          >Lalitpur,Kathmandu</a>
+      </p>
+      <p><span>Blood Group:</span> A-</p>
+      <button id="popup-btn">Details</button>
+    </div>
+  </div>
   <body>
     <header>
       <a href="index.html">
@@ -44,16 +57,9 @@
           </div>
         </div>
 
-        <div class="dropdown">
-          <button class="dropbtn" data-menu="bloodbanks">Blood Banks ▾</button>
-          <div class="dropdown-content" id="bloodbanks">
-            <a href="#">Central Blood Bank</a>
-            <a href="#">City Blood Center</a>
-            <a href="#">Community Blood Bank</a>
-          </div>
-        </div>
+        <a href="bloodbank.html">Blood Banks</a>
         <a href="criteria.html">Criterias for Donors</a>
-        <a href="#">About Us</a>
+        <a href="aboutus.html">About Us</a>
       </nav>
 
       <a href="login.html"><button class="btn-signing">LogIn</button></a>
