@@ -1,0 +1,135 @@
+/* SOS Container */
+.sos-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sos-container h2 {
+    text-align: center;
+    color: #a21015;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fde8e8;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    padding: 12px 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #a21015;
+    box-shadow: 0 0 0 3px rgba(162, 16, 21, 0.08);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.input-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a21015' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    cursor: pointer;
+}
+
+/* SOS Button */
+.sos-btn {
+    width: 100%;
+    padding: 14px;
+    background: #a21015;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease, transform 0.1s ease;
+    letter-spacing: 0.5px;
+}
+
+.sos-btn:hover {
+    background: #c41018;
+    transform: translateY(-1px);
+}
+
+.sos-btn:active {
+    transform: translateY(0px);
+}
+
+/* Pulse animation on the button to show urgency */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(162, 16, 21, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(162, 16, 21, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(162, 16, 21, 0); }
+}
+
+.sos-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Success and Error messages */
+#sosError, #sosSuccess {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+#sosError {
+    background: #fff0f0;
+    color: #c0392b;
+    border: 1px solid #f5c6cb;
+}
+
+#sosSuccess {
+    background: #f0fff4;
+    color: #27ae60;
+    border: 1px solid #c3e6cb;
+}
+
+/* hide empty message boxes */
+#sosError:empty, #sosSuccess:empty {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 540px) {
+    .sos-container {
+        margin: 20px;
+        padding: 25px 20px;
+    }
+}

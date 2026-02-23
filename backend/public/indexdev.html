@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ne">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>रक्त कनेक्ट</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="chatbot.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="register.js"></script>
+  </head>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2>!! आपतकालीन रगत चाहिन्छ !!</h2>
+      <p>
+        <span>स्थान:</span>
+        <a href="https://maps.app.goo.gl/tFYjbKBBTc1VMbyw6">ललितपुर, काठमाडौं</a>
+      </p>
+      <p><span>रगत समूह:</span> A-</p>
+      <button id="popup-btn">विवरण</button>
+    </div>
+  </div>
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="./images/logo.png" alt="रक्त कनेक्ट" class="logo" />
+      </a>
+
+      <nav class="nav">
+        <a href="#">गृहपृष्ठ</a>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-menu="hospitals">अस्पतालहरू ▾</button>
+          <div class="dropdown-content" id="hospitals">
+            <a href="https://birhospital.gov.np" target="_blank">वीर अस्पताल</a>
+            <a href="https://www.cityhospital.com" target="_blank">सिटी अस्पताल</a>
+            <a href="https://www.grandehospital.com" target="_blank">ग्रान्डे अस्पताल</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-menu="ngos">गैसस ▾</button>
+          <div class="dropdown-content" id="ngos">
+            <a href="#">रेड क्रस नेपाल</a>
+            <a href="#">लायन्स क्लब</a>
+            <a href="#">रोटरी क्लब</a>
+          </div>
+        </div>
+
+        <a href="bloodbank.html">रगत बैंकहरू</a>
+        <a href="criteria.html">दाताका मापदण्डहरू</a>
+        <a href="aboutus.html">हाम्रोबारे</a>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-menu="ngos">भाषा छान्नुहोस् ▾</button>
+          <div class="dropdown-content" id="ngos">
+            <a href="index.html">अंग्रेजी</a>
+            <a href="indexdev.html">नेपाली</a>
+          </div>
+        </div>
+      </nav>
+
+      <a href="login.html"><button class="btn-signing">लगइन</button></a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-image-wrap">
+        <img
+          src="./images/blooddrop.png"
+          alt="रगत थोपा छवि"
+          class="main-glove-image"
+        />
+      </div>
+      <div class="hero-content">
+        <h2>रगत खोज्न गाह्रो हुनु हुँदैन।</h2>
+        <p>
+          हामी दाताहरू, अस्पतालहरू र रगत बैंकहरूलाई वास्तविक समयमा जोड्छौं
+          ताकि आपतकालमा कसैले पर्खनु नपरोस्।
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <h3>२ सेकेन्ड</h3>
+            <span>कसैलाई रगत चाहिन्छ</span>
+          </div>
+          <div class="stat">
+            <h3>३ जीवन</h3>
+            <span>प्रति दानमा बचाइन्छ</span>
+          </div>
+          <div class="stat">
+            <h3>२४/७</h3>
+            <span>आपतकालीन पहुँच</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="actions-section">
+      <div class="action-card donor">
+        <h3>दाता बन्नुहोस्</h3>
+        <p>एक पटक दर्ता गर्नुहोस्। जहिले सक्नुहुन्छ जीवन बचाउनुहोस्।</p>
+        <button onclick="window.location.href = 'register.html'">
+          दाताको रूपमा दर्ता गर्नुहोस्
+        </button>
+      </div>
+
+      <div class="action-card request">
+        <h3>रगत अनुरोध गर्नुहोस्</h3>
+        <p>नजिकका दाताहरू र रगत बैंकहरू तुरुन्त खोज्नुहोस्।</p>
+        <button onclick="window.location.href = 'register.html'">
+          रगत अनुरोध गर्नुहोस्
+        </button>
+      </div>
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>AOS.init();</script>
+
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@1.12.58/build/spline-viewer.js"
+      ></script>
+      <div class="spline-wrapper">
+        <spline-viewer
+          url="https://prod.spline.design/Vx17CJDZRbiKh5cA/scene.splinecode"
+        ></spline-viewer>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <section class="events-section">
+      <h2 class="section-title">आगामी रगत दान अभियानहरू</h2>
+
+      <div class="events-grid">
+        <div class="event-card" data-aos="fade-up">
+          <div class="event-date">
+            <span class="day">२५</span>
+            <span class="month">फेब्रु</span>
+          </div>
+          <div class="event-info">
+            <h3>सिटी सेन्ट्रल मल अभियान</h3>
+            <p>📍 काठमाडौं, नेपाल</p>
+            <p>⏰ बिहान १०:०० - साँझ ४:००</p>
+            <a href="register.html"><button class="remind-btn">कार्यक्रममा दर्ता गर्नुहोस्</button></a>
+          </div>
+        </div>
+
+        <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="event-date">
+            <span class="day">०२</span>
+            <span class="month">मार्च</span>
+          </div>
+          <div class="event-info">
+            <h3>लायन्स क्लब रगत शिविर</h3>
+            <p>📍 पाटन दरबार क्षेत्र</p>
+            <p>⏰ बिहान ९:०० - दिउँसो ३:००</p>
+            <a href="register.html"><button class="remind-btn">कार्यक्रममा दर्ता गर्नुहोस्</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="partner-carousel">
+        <p>हाम्रा सम्बद्ध साझेदारहरू</p>
+        <div class="partner-overflow">
+          <div class="partner-track">
+            <img src="./images/bir.png" alt="साझेदार १" />
+            <img src="./images/grande.png" alt="साझेदार २" />
+            <img src="./images/nrcs.png" alt="साझेदार ३" />
+            <img src="./images/bir.png" alt="साझेदार १" />
+            <img src="./images/grande.png" alt="साझेदार २" />
+            <img src="./images/nrcs.png" alt="साझेदार ३" />
+            <img src="./images/bir.png" alt="साझेदार १" />
+            <img src="./images/grande.png" alt="साझेदार २" />
+            <img src="./images/nrcs.png" alt="साझेदार ३" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-column logo-col">
+          <img src="./images/logo.png" alt="लोगो" class="footer-logo" />
+          <p>
+            हरेक थोपामार्फत जीवन जोड्दै। नेपालको सबैभन्दा विश्वसनीय रगत दान नेटवर्क।
+          </p>
+        </div>
+
+        <div class="footer-column contact-col">
+          <h3>सम्पर्क गर्नुहोस्</h3>
+          <ul>
+            <li>📍 ललितपुर, नेपाल</li>
+            <li>📞 +977 9841446364</li>
+            <li>✉️ info@raktaconnect.org</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; २०२६ रक्तकनेक्ट। सर्वाधिकार सुरक्षित।</p>
+      </div>
+    </footer>
+
+    <!-- च्याटबट टगल बटन -->
+    <button id="chatToggleBtn" onclick="toggleChat()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- च्याटबट कन्टेनर -->
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <h2><i class="fas fa-robot"></i> रक्त CONNECT</h2>
+        <div class="controls">
+          <button id="micBtn" title="आवाज इनपुट">
+            <i class="fas fa-microphone"></i>
+          </button>
+          <button id="ttsBtn" title="टेक्स्ट-टु-स्पिच टगल गर्नुहोस्" class="active" onclick="toggleTTSAndStop()">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="chat-box" class="chat-box">
+        <div class="message bot-message">नमस्ते! म कसरी मद्दत गर्न सक्छु?</div>
+      </div>
+
+      <div id="image-preview-container" class="hidden">
+        <img id="image-preview" src="" alt="पूर्वावलोकन" />
+        <button id="remove-image"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="input-area">
+        <label for="image-input" class="icon-btn"><i class="fas fa-image"></i></label>
+        <input type="file" id="image-input" accept="image/*" hidden />
+        <input type="text" id="user-input" placeholder="सन्देश टाइप गर्नुहोस्..." />
+        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+  </body>
+</html>

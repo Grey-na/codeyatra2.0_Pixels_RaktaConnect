@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-avatar" id="profileAvatar">?</div>
+        <h2 id="profileUsername">Loading...</h2>
+        <span class="role-badge" id="profileRole"></span>
+
+        <div class="profile-details">
+            <div class="detail-row">
+                <span class="label">👤 Username</span>
+                <span id="profileUsernameValue">—</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">🏅 Earned Points</span>
+                <span id="profileUsernameValue">—</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">📧 Email</span>
+                <span id="profileEmail">—</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">📞 Phone</span>
+                <span id="profilePhone">—</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">🩸 Blood Group</span>
+                <span id="profileBloodGroup">—</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">👤 Age</span>
+                <span id="profileAge">—</span>
+            </div>
+        </div>
+
+        <p id="profileError" style="color:red;"></p>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

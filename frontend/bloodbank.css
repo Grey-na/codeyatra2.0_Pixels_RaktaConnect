@@ -1,0 +1,191 @@
+/* Blood Bank Page Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(180deg, #fff5f5, #ffffff);
+  color: #333;
+  line-height: 1.6;
+}
+
+.bb-header {
+  background: linear-gradient(90deg, #7a0b0b, #9b1111);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(122, 11, 11, 0.2);
+}
+
+.bb-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.bb-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.filter-section {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-section label {
+  font-weight: 600;
+  color: #7a0b0b;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.filter-section select {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #7a0b0b;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #7a0b0b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-section select:hover {
+  background: #7a0b0b;
+  color: white;
+}
+
+.banks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bank-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.bank-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(122, 11, 11, 0.15);
+}
+
+.bank-card h3 {
+  color: #7a0b0b;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.bank-card p {
+  color: #666;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.bank-card strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.bank-card button {
+  background: #7a0b0b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.bank-card button:hover {
+  background: #9b1111;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .bb-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .bb-header h1 {
+    font-size: 2rem;
+  }
+  
+  .bb-header p {
+    font-size: 1rem;
+  }
+  
+  .filter-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .filter-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+  
+  .filter-section select {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .banks-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  
+  .bank-card {
+    padding: 1.5rem;
+  }
+  
+  .bank-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bb-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .bb-header p {
+    font-size: 0.9rem;
+  }
+  
+  .banks-grid {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .bank-card {
+    padding: 1rem;
+  }
+  
+  .bank-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .bank-card p {
+    font-size: 0.9rem;
+  }
+}
