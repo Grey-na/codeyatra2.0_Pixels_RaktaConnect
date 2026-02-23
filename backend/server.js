@@ -1,4 +1,3 @@
-
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -7,6 +6,8 @@ const axios = require("axios");
 const fetch = require("node-fetch");
 const path = require("path");
 const groqApiKey = process.env.GROQ_API_KEY;
+const donationRoutes = require("./routes/donation");
+const rewardRoutes = require("./routes/rewards");
 
 const nodemailer = require("nodemailer");
 
@@ -17,10 +18,8 @@ const backendDir = __dirname;
 const parentDir = path.dirname(backendDir);
 const frontendDir = path.join(parentDir, "frontend");
 
-const rewardRoutes = require("./routes/rewards");
-
-const donationRoutes = require("./routes/donation"); 
-
+app.use(express.json({ limit: "50mb" }));
+app.use(express.static("public"));
 
 app.use("/api/rewards", rewardRoutes);
 app.use("/api/donations", donationRoutes);
@@ -37,8 +36,6 @@ app.use(
     credentials: true,
   }),
 );
-app.use(express.json({ limit: "50mb" }));
-app.use(express.static("public"));
 
 // Debug Middleware: Log every request hitting the server
 app.use((req, res, next) => {
@@ -46,6 +43,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/api/donations", donationRoutes);
+app.use("/api/rewards", rewardRoutes);
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 app.use("/api/rewards", require("./routes/rewards"));
@@ -78,11 +77,13 @@ app.post("/api/chat", async (req, res) => {
     // Restore Groq API call with corrected API key
     if (!groqApiKey) {
       console.error("Groq API key is missing!");
-      return res.status(500).json({ reply: "API configuration error. Please contact support." });
+      return res
+        .status(500)
+        .json({ reply: "API configuration error. Please contact support." });
     }
-    
+
     console.log("Attempting Groq API call...");
-    
+
     const response = await fetch(
       "https://api.groq.com/openai/v1/chat/completions",
       {
@@ -106,32 +107,44 @@ app.post("/api/chat", async (req, res) => {
         }),
       },
     );
-    
+
     console.log("Groq API Response Status:", response.status);
-    console.log("Groq API Response Headers:", Object.fromEntries(response.headers.entries()));
-    
+    console.log(
+      "Groq API Response Headers:",
+      Object.fromEntries(response.headers.entries()),
+    );
+
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Groq API Error:", response.status, errorText);
-      console.error("Request payload:", JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        messages: [
+      console.error(
+        "Request payload:",
+        JSON.stringify(
           {
-            role: "system",
-            content: systemPrompt || "Assist users with blood donation registration, urgent blood requests, donor eligibility checks, and locating nearby blood banks across Nepal. In emergencies, instruct users to call 102 or the nearest hospital immediately. Provide structured step-by-step guidance for blood-related services.",
+            model: "llama-3.3-70b-versatile",
+            messages: [
+              {
+                role: "system",
+                content:
+                  systemPrompt ||
+                  "Assist users with blood donation registration, urgent blood requests, donor eligibility checks, and locating nearby blood banks across Nepal. In emergencies, instruct users to call 102 or the nearest hospital immediately. Provide structured step-by-step guidance for blood-related services.",
+              },
+              ...history.slice(-10),
+              { role: "user", content: message },
+            ],
           },
-          ...history.slice(-10),
-          { role: "user", content: message },
-        ],
-      }, null, 2));
-      
+          null,
+          2,
+        ),
+      );
+
       // If API fails, provide a contextual fallback response
       const fallbackResponse = `I understand you're asking about: "${message}". I'm here to help with blood donation services in Nepal. For specific assistance, please try rephrasing your question about blood donation, urgent requests, donor eligibility, or finding nearby blood banks.`;
       const reply = fallbackResponse;
       res.json({ reply });
       return;
     }
-    
+
     const data = await response.json();
     console.log("Groq API Response Data:", data);
     // Safely access the reply from the AI's response

@@ -18,7 +18,7 @@
       <section class="donor-card">
         <div class="donor-data">
           <h1>Donor Registration Form</h1>
-          <form action="#" method="post">
+          <form id="donationForm">
             <!-- First Name & Last Name -->
             <div class="donor-name-row">
 
@@ -77,9 +77,9 @@
 
             <!-- Blood Group Dropdown -->
             <div class="donor-input-group">
-              <label for="donorBloodGroup">Blood Group</label>
-              <div class="donor-select-wrapper">
-                <select id="donorBloodGroup" name="bloodGroup" required>
+             <label for="blood_type">Blood Group</label>
+                <div class="donor-select-wrapper">
+                  <select id="blood_type" name="bloodGroup" required>
                   <option value="" disabled selected>
                     Select your blood group
                   </option>
@@ -129,14 +129,13 @@
             </button>
           </form>
           <script>
-document.getElementById('donationForm').addEventListener('submit', async (e) => {
+            document.getElementById('donationForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Get values from form
-    const blood_type = document.getElementById('blood_type').value;
-    const event_id = document.getElementById('event_id').value;
+    // FIXED: Use the actual IDs from your HTML tags above
+    const blood_type = document.getElementById('donorBloodGroup').value;
+    const event_id = null; // Since you don't have an event_id input yet, we send null
 
-    // IMPORTANT: Get the token you saved during login
     const token = localStorage.getItem("token"); 
 
     try {
@@ -147,18 +146,18 @@ document.getElementById('donationForm').addEventListener('submit', async (e) => 
         }, 
         {
             headers: {
-                // This matches your authMiddleware: req.headers["authorization"]
                 "authorization": token 
             }
         });
 
         alert("Success: " + response.data.message);
-        window.location.href = "index_donor.html"; // Redirect after success
+        window.location.href = "index_donor.html"; 
     } catch (error) {
-        console.error("Error details:", error.response.data);
-        alert("Failed: " + (error.response.data.message || "Server Error"));
+        console.error("Error details:", error.response?.data);
+        alert("Failed: " + (error.response?.data?.message || "Server Error"));
     }
 });
+
 </script>
         </div>
       </section>
