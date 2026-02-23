@@ -6,8 +6,11 @@
     <title>hackathon</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="chatbot.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="chatbot.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="register.js"></script>
   </head>
@@ -18,7 +21,8 @@
       <p>
         <span>Location:</span>
         <a href="https://maps.app.goo.gl/tFYjbKBBTc1VMbyw6"
-          >Lalitpur,Kathmandu</a>
+          >Lalitpur,Kathmandu</a
+        >
       </p>
       <p><span>Blood Group:</span> A-</p>
       <button id="popup-btn">Details</button>
@@ -60,6 +64,14 @@
         <a href="bloodbank.html">Blood Banks</a>
         <a href="criteria.html">Criterias for Donors</a>
         <a href="aboutus.html">About Us</a>
+
+        <div class="dropdown">
+          <button class="dropbtn" data-menu="language">Choose Language ▾</button>
+          <div class="dropdown-content" id="ngos">
+            <a href="index.html">English</a>
+            <a href="indexdev.html">Nepali</a>
+          </div>
+        </div>
       </nav>
 
       <a href="login.html"><button class="btn-signing">LogIn</button></a>
@@ -144,7 +156,9 @@
             <h3>City Central Mall Drive</h3>
             <p>📍 Kathmandu, Nepal</p>
             <p>⏰ 10:00 AM - 4:00 PM</p>
-           <a href="register.html"><button class="remind-btn">Register for Event</button></a> 
+            <a href="register.html"
+              ><button class="remind-btn">Register for Event</button></a
+            >
           </div>
         </div>
 
@@ -157,7 +171,9 @@
             <h3>Lions Club Blood Camp</h3>
             <p>📍 Patan Durbar Square</p>
             <p>⏰ 09:00 AM - 3:00 PM</p>
-           <a href="register.html"><button class="remind-btn">Register for Event</button></a> 
+            <a href="register.html"
+              ><button class="remind-btn">Register for Event</button></a
+            >
           </div>
         </div>
       </div>
@@ -203,37 +219,47 @@
       </div>
     </footer>
     <!-- Chatbot Toggle Button -->
-<button id="chatToggleBtn" onclick="toggleChat()">
-    <i class="fas fa-comment-dots"></i>
-</button>
+    <button id="chatToggleBtn" onclick="toggleChat()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
 
-<!-- Chatbot Container -->
-<div class="chat-container" id="chatContainer">
-    <div class="chat-header">
+    <!-- Chatbot Container -->
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
         <h2><i class="fas fa-robot"></i> रक्त CONNECT</h2>
         <div class="controls">
-            <button id="micBtn" title="Voice Input"><i class="fas fa-microphone"></i></button>
-            <button id="ttsBtn" title="Toggle Text-to-Speech" class="active" onclick="toggleTTSAndStop()"><i class="fas fa-volume-up"></i></button>
+          <button id="micBtn" title="Voice Input">
+            <i class="fas fa-microphone"></i>
+          </button>
+          <button
+            id="ttsBtn"
+            title="Toggle Text-to-Speech"
+            class="active"
+            onclick="toggleTTSAndStop()"
+          >
+            <i class="fas fa-volume-up"></i>
+          </button>
         </div>
-    </div>
+      </div>
 
-    <div id="chat-box" class="chat-box">
+      <div id="chat-box" class="chat-box">
         <div class="message bot-message">Hello! What can I help with?</div>
-    </div>
+      </div>
 
-    <div id="image-preview-container" class="hidden">
-        <img id="image-preview" src="" alt="Preview">
+      <div id="image-preview-container" class="hidden">
+        <img id="image-preview" src="" alt="Preview" />
         <button id="remove-image"><i class="fas fa-times"></i></button>
-    </div>
+      </div>
 
-    <div class="input-area">
-        <label for="image-input" class="icon-btn"><i class="fas fa-image"></i></label>
-        <input type="file" id="image-input" accept="image/*" hidden>
-        <input type="text" id="user-input" placeholder="Type a message...">
+      <div class="input-area">
+        <label for="image-input" class="icon-btn"
+          ><i class="fas fa-image"></i
+        ></label>
+        <input type="file" id="image-input" accept="image/*" hidden />
+        <input type="text" id="user-input" placeholder="Type a message..." />
         <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-</div>
-
 
     <script src="chatbot.js"></script>
   </body>

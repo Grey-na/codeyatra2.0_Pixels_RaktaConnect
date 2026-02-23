@@ -92,7 +92,12 @@ function readCriteria_e() {
 }
 window.onload = function () {
   const popup = document.getElementById("popup");
-  popup.style.display = "flex";
+  popup.style.display = "none";   // ← hide first
+  
+  setTimeout(() => {
+    popup.style.display = "flex"; // ← then show (optional delay)
+  }, 500);
+  
   document.body.classList.add("popup-open");
 };
 
