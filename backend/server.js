@@ -17,19 +17,9 @@ const port = process.env.PORT || 5000;
 const backendDir = __dirname;
 const parentDir = path.dirname(backendDir);
 const frontendDir = path.join(parentDir, "frontend");
-
+const uprofileRoutes = require("./routes/uprofile");
 app.use(express.json({ limit: "50mb" }));
 app.use(express.static("public"));
-
-app.use("/api/rewards", rewardRoutes);
-app.use("/api/donations", donationRoutes);
-// Serve static files from the 'public' folder
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "backend", "public")));
-
-// Or if 'register.css' is in a specific folder:
-app.use("/static", express.static(path.join(__dirname, "frontend")));
-
 app.use(
   cors({
     origin: ["http://127.0.0.1:5500", "http://localhost:5500"],
@@ -37,7 +27,18 @@ app.use(
   }),
 );
 
-// Debug Middleware: Log every request hitting the server
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/api/users", uprofileRoutes);
+app.use("/api/sos", require("./routes/sos1"));
+app.use("/api/rewards", rewardRoutes);
+app.use("/api/donations", donationRoutes);
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "backend", "public")));
+
+app.use("/static", express.static(path.join(__dirname, "frontend")));
+
 app.use((req, res, next) => {
   console.log(`[DEBUG] Incoming Request: ${req.method} ${req.url}`);
   next();
@@ -48,17 +49,13 @@ app.use("/api/rewards", rewardRoutes);
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 app.use("/api/rewards", require("./routes/rewards"));
-
-app.use("/api/sos", require("./routes/sos"));
+app.use("/api/sos", require("./routes/sos1"));
 
 app.post("/api/chat", async (req, res) => {
   try {
     console.log("[DEBUG] Entering /api/chat route handler");
-    // The image from the frontend is available in req.body.image, but it's not used
-    // because the selected AI model (llama3) is text-only.
     const { message, history = [], systemPrompt } = req.body;
 
-    // Log to verify the system prompt is being received from the frontend
     console.log("Payload Check:", {
       hasMessage: !!message,
       historyLength: history.length,
@@ -69,12 +66,10 @@ app.post("/api/chat", async (req, res) => {
       systemPromptLength: systemPrompt ? systemPrompt.length : 0,
     });
 
-    // Prevent sending empty messages to the AI.
     if (!message && history.length === 0) {
       return res.status(400).json({ reply: "Message content is empty." });
     }
 
-    // Restore Groq API call with corrected API key
     if (!groqApiKey) {
       console.error("Groq API key is missing!");
       return res
