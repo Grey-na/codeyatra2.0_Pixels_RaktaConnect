@@ -35,7 +35,7 @@ body {
   overflow: hidden;
 }
 header {
-  width: 100vw; /* FULL SCREEN WIDTH */
+  width: 100vw; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +50,7 @@ header {
 }
 
 header h1 {
-  font-size: 2rem; /* smaller, cleaner */
+  font-size: 2rem; 
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -58,7 +58,7 @@ header h1 {
 nav {
   display: flex;
   align-items: center;
-  gap: 2rem; /* slightly tighter spacing */
+  gap: 2rem; 
 }
 
 nav a {
@@ -72,7 +72,7 @@ nav a {
 
 nav a:hover {
   opacity: 1;
-  transform: translateY(-2px); /* subtle hover motion */
+  transform: translateY(-2px); 
 }
 .nav {
   display: flex;
@@ -131,7 +131,7 @@ nav a:hover {
 .btn-signing {
   background: rgba(255, 255, 255, 0.85);
   color: #7a0b0b;
-  padding: 0.5rem 1.4rem; /* smaller button */
+  padding: 0.5rem 1.4rem; 
   border-radius: 999px;
   border: none;
   font-size: 0.9rem;

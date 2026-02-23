@@ -34,7 +34,7 @@ window.location.href = rolePages[role] || "index.html";
   } catch (error) {
     console.log("error in login js: ", error);
     if (error.response && error.response.data) {
-      document.getElementById("loginError").textContent =
+      document.getElementById("loginError").textContent =""
         error.response.data.message;
     } else {
       document.getElementById("loginError").textContent =

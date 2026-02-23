@@ -58,35 +58,35 @@ eventCards.forEach((card) => {
 function readCriteria_a() {
   const text = document.getElementById("criteria-text-a").innerText;
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "ne-NP";
+  utterance.lang = "us-EN";
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
 function readCriteria_b() {
   const text = document.getElementById("criteria-text-b").innerText;
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "ne-NP";
+  utterance.lang = "us-EN";
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
 function readCriteria_c() {
   const text = document.getElementById("criteria-text-c").innerText;
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "ne-NP";
+  utterance.lang = "us-EN";
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
 function readCriteria_d() {
   const text = document.getElementById("criteria-text-d").innerText;
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "ne-NP";
+  utterance.lang = "us-EN";
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
 function readCriteria_e() {
   const text = document.getElementById("criteria-text-e").innerText;
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "ne-NP";
+  utterance.lang = "us-EN";
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }

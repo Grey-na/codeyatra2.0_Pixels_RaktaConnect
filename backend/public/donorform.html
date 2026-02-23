@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="loginpage-registerpage.css" />
+    <link rel="stylesheet" href="register.css" />
     <title>Donor Registration</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
 
   <body>
     <div class="donor-container">
       <div class="donor-image">
-        <img src="./images/donor registration.png" alt="donor image" />
+        <img src="./images/donor registration.png.png" alt="donor image" />
       </div>
       <section class="donor-card">
         <div class="donor-data">
@@ -19,6 +21,7 @@
           <form action="#" method="post">
             <!-- First Name & Last Name -->
             <div class="donor-name-row">
+
               <div class="donor-input-group">
                 <label for="donorFirstName">First Name</label>
                 <input
@@ -125,9 +128,40 @@
               Register as Donor
             </button>
           </form>
+          <script>
+document.getElementById('donationForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Get values from form
+    const blood_type = document.getElementById('blood_type').value;
+    const event_id = document.getElementById('event_id').value;
+
+    // IMPORTANT: Get the token you saved during login
+    const token = localStorage.getItem("token"); 
+
+    try {
+        const response = await axios.post("http://localhost:5000/api/donations", 
+        {
+            blood_type: blood_type,
+            event_id: event_id
+        }, 
+        {
+            headers: {
+                // This matches your authMiddleware: req.headers["authorization"]
+                "authorization": token 
+            }
+        });
+
+        alert("Success: " + response.data.message);
+        window.location.href = "index_donor.html"; // Redirect after success
+    } catch (error) {
+        console.error("Error details:", error.response.data);
+        alert("Failed: " + (error.response.data.message || "Server Error"));
+    }
+});
+</script>
         </div>
       </section>
     </div>
   </body>
-  <script src="register.js"></script>
 </html>

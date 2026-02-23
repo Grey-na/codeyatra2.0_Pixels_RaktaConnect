@@ -3,10 +3,7 @@ const router = express.Router();
 const db = require("../config/db");
 const authMiddleware = require("../middleware/authMiddleware");
 
-// --- CREATE DONATION ---
-// @route   POST /api/donations
-// @desc    Register a new donation (defaults to pending)
-// @access  Private (Donor only)
+
 router.post("/", authMiddleware, (req, res) => {
   // Only users with the 'donor' role can initiate a donation record
   if (req.user.role !== "donor") {
@@ -40,10 +37,7 @@ router.post("/", authMiddleware, (req, res) => {
   );
 });
 
-// --- VERIFY DONATION ---
-// @route   PATCH /api/donations/verify/:donationId
-// @desc    Verify a donation and automatically award 100 points to the donor
-// @access  Private (Admin & NGO only)
+
 router.patch("/verify/:donationId", authMiddleware, (req, res) => {
   // 1. Authorization Check: Only allow Admin or NGO to verify donations
   if (req.user.role !== "admin" && req.user.role !== "ngo") {
