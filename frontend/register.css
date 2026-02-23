@@ -1,10 +1,11 @@
+
 body {
   background-color: rgb(251, 235, 238);
 }
 .lcontainer {
   display: flex;
   justify-content: left; 
-  align-items: center; 
+  align-items: center;
   min-height: calc(100vh - 70px);
 }
 
@@ -26,6 +27,7 @@ label {
 .image img {
   width: 550px;
 }
+.revent-card ,
 .login-btn {
   background-color: #9b0a0a;
   color: white;
@@ -64,7 +66,7 @@ label {
 
 .password-wrapper input {
   width: 80%;
-  padding: 12px 40px 12px 14px; 
+  padding: 12px 40px 12px 14px; /* space for icon */
   border-radius: 12px;
   border: 1px solid #ddd;
 }
@@ -86,28 +88,32 @@ label {
 .notregistered a {
   color: black;
 }
-/* /Resister/ */
+/*Register*/
+.addcontainer,
 .rcontainer {
   display: flex;
-  justify-content: left; 
-  align-items: center; 
+  justify-content: left; /* horizontal center */
+  align-items: center; /* vertical center */
   min-height: calc(100vh - 70px);
 }
-.register-card {
+.register-card ,
+.addevent-card{
   background-color: white;
   padding: 1.5rem 2rem;
   border-radius: 15px;
-  width: 480px; 
+  width: 480px; /* fixed card width so everything aligns */
   box-sizing: border-box;
 }
 .rname {
   display: flex;
   gap: 16px;
 }
-.rname .rinput-group {
-  flex: 1; 
+.rname .rinput-group,
+.eventname .eventinput-group {
+  flex: 1; /* each takes equal width */
 }
-.register-btn {
+.register-btn,      /**/
+.submitform-btn {
   width: 100%;
   height: 40px;
   background-color: #9b0a0a;
@@ -119,27 +125,53 @@ label {
   font-weight: 600;
   font-size: 1rem;
 }
-.register-btn:hover {
+.register-btn:hover 
+,.submitform-btn:hover{
   background-color: #7a0808;
 }
-.rinput-group {
+.rinput-group,
+.addeventinput-group {
   gap: 9px;
   margin-top: 11px;
 }
 .rinput-group input,
-.rinput-group select {
+.rinput-group select ,    /**/
+.addeventinput-group input {
   width: 100%;
   padding: 14px;
   border-radius: 12px;
   border: 1px solid #ddd;
   font-size: 1rem;
   background-color: white;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* critical - includes padding in width */
 }
-.rextra-options {
+.rinput-group select,
+.addeventinput-group select {
+  width: 420px;
+  padding-top: 2px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: white;
+  appearance: none;
+}
+.addevent-data h1{
+  margin-top: -18px;
+  text-align: center;
+}
+
+.rimage img,
+.addimage img {
+  width: 550px;
+}
+.revent-card      /**/
+.rextra-options,
+.addevent-card {
   margin-top: 20px;
   gap: 12px;
 }
+
 .password-wrapper,
 .confirmpassword-wrapper {
   position: relative;
@@ -152,9 +184,7 @@ label {
   box-sizing: border-box;
 }
 
-.rimage img{
-  width: 550px  ;
-}
+
 .toggle-confirmpassword {
   position: absolute;
   right: 12px;
@@ -165,6 +195,15 @@ label {
   cursor: pointer;
   font-size: 1rem;
 }
+
+.forgotPassword {
+  margin-top: 12px;
+}
+
+.forgotPassword a {
+  color: black;
+}
+
 #roleSelect {
   position: absolute;
   opacity: 0;
@@ -172,40 +211,27 @@ label {
   width: 100%;
   height: 100%;
 }
-.forgotPassword{
-  margin-top: 12px;
-}
-.forgotPassword a{
-  color: black;
-}
 
-.rinput-group select {
-  width: 420px;
-  padding-top: 2px;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-  background-color: white;
-  appearance: none;
-}
+
+
 
 .rinput-group {
   position: relative;
 }
 .rinput-group select {
-  padding-right: 40px; 
+  padding-right: 40px; /* space for custom arrow */
 }
-.register-data{
-    margin-top: -30px; 
+.register-data {
+  margin-top: -30px;
+  align-items: center;
+  justify-items: center;
 }
-
-.select-wrapper{
-    position: relative;
-    width: 100%;
+.select-wrapper {
+  position: relative;
+  width: 100%;
 }
-.select-wrapper::after{
-      position: absolute;
+.select-wrapper::after {
+  position: absolute;
   right: 14px;
   top: 50%;
   transform: translateY(-50%);

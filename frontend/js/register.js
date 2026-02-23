@@ -1,52 +1,45 @@
-// password hide
-const toggleBtn = document.querySelector(".toggle-password");
+document.getElementById("registerForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-toggleBtn.addEventListener("click", () => {
-  const passwordInput = toggleBtn.previousElementSibling; // gets the input before the button
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    toggleBtn.textContent = "🚫";
-  } else {
-    passwordInput.type = "password";
-    toggleBtn.textContent = "👁";
+  const username = document.getElementById("username").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const confirmPassword = document.getElementById("confirmPassword").value.trim();
+  const role = document.getElementById("role").value;
+  const bloodGroup = document.getElementById("bloodgroup").value.trim();
+
+  // clear previous messages
+  document.getElementById("registerError").textContent = "";
+  document.getElementById("registerSuccess").textContent = "";
+
+  // check passwords match before even hitting the backend
+  if (password !== confirmPassword) {
+    document.getElementById("registerError").textContent = "Passwords do not match!";
+    return;
   }
-});
 
-const togglecpBtn = document.querySelector(".toggle-confirmpassword");
+  try {
+    const response = await axios.post("http://192.168.56.1:5000/api/auth/register", {
+      username,
+      email,
+      phone,
+      password,
+      role,
+    });
 
-togglecpBtn.addEventListener("click", () => {
-  const passwordInput = togglecpBtn.previousElementSibling; // gets the input before the button
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    togglecpBtn.textContent = "🚫";
-  } else {
-    passwordInput.type = "password";
-    togglecpBtn.textContent = "👁";
-  }
-});
+    document.getElementById("registerSuccess").textContent = "Registered successfully! Redirecting to login...";
 
-/*password and confirm password same */
-const form = document.querySelector("form");
-const passwordInput = document.querySelector(".password-wrapper input");
-const confirmPasswordInput = document.querySelector(
-  ".confirmpassword-wrapper input",
-);
+    // wait 1.5 seconds then redirect to login
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 1500);
 
-// Real-time check as user types in confirm password field
-confirmPasswordInput.addEventListener("input", () => {
-  if (confirmPasswordInput.value !== passwordInput.value) {
-    confirmPasswordInput.style.border = "2px solid red";
-  } else {
-    confirmPasswordInput.style.border = "2px solid green";
-  }
-});
-
-// Block form submission if passwords don't match
-form.addEventListener("submit", (e) => {
-  if (passwordInput.value !== confirmPasswordInput.value) {
-    e.preventDefault(); // stops form from submitting
-    alert("Passwords do not match. Please try again.");
-    confirmPasswordInput.focus(); // brings cursor back to confirm field
-    confirmPasswordInput.style.border = "2px solid red";
+  } catch (error) {
+    if (error.response) {
+      document.getElementById("registerError").textContent = error.response.data.message;
+    } else {
+      document.getElementById("registerError").textContent = "Cannot connect to server. Is the backend running?";
+    }
   }
 });

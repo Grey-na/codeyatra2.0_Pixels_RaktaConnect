@@ -18,7 +18,7 @@
       <section class="register-card">
         <div class="register-data">
           <h1>Register</h1>
-          <form id="registerform">
+          <form id="registerForm">
             <div class="rname">
               <div class="rinput-group">
                 <label>UserName</label>
@@ -46,21 +46,23 @@
                 <option value="" disabled selected>Select your role</option>
                 <option value="Donor">Donor</option>
                 <option value="Hospital/BloodBank">BloodBank</option>
-                <option value="NGo">NGO</option>
+                <option value="NGO">NGO</option>
               </select>
             </div>
 
             <div class="rinput-group password-wrapper">
               <label>Password</label>
-              <input type="password" placeholder="**" required />
+              <input type="password" id="password" placeholder="**" required />
               <button type="button" class="toggle-password">👁</button>
             </div>
             <div class="rinput-group confirmpassword-wrapper">
               <label> Confirm Password</label>
-              <input type="password" placeholder="****" required />
+              <input type="password" id="confirmPassword" placeholder="****" required />
               <button type="button" class="toggle-confirmpassword">👁</button>
             </div>
-
+            
+            <p id="registerError" style="color: red;"></p>
+            <p id="registerSuccess" style="color: green;"></p>
             <button type="submit" class="register-btn">Register</button>
 
             <div class="forgotPassword">
