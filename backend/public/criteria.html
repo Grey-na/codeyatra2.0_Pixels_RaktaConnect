@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="criteria.css" />
+    <title>Criteria</title>
+  </head>
+  <header>
+    <a href="index.html">
+      <img src="./images/logo.png" alt="Rakta Connect" class="logo" />
+    </a>
+    <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">
+      Donate blood
+    </h1>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn" data-menu="hospitals">Hospitals ▾</button>
+        <div class="dropdown-content" id="hospitals">
+          <a href="https://birhospital.gov.np" target="_blank">Bir Hospital</a>
+          <a href="https://www.cityhospital.com" target="_blank"
+            >City Hospital</a
+          >
+          <a href="https://www.grandehospital.com" target="_blank"
+            >Grande Hospital</a
+          >
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" data-menu="ngos">NGOs ▾</button>
+        <div class="dropdown-content" id="ngos">
+          <a href="#">Red Cross Nepal</a>
+          <a href="#">Lions Club</a>
+          <a href="#">Rotary Club</a>
+        </div>
+      </div>
+
+      <a href ="bloodbank.html">Blood Banks</a>
+      <a href="criteria.html">Criterias for Donors</a>
+      <a href="aboutus.html">About Us</a>
+      <div class="dropdown">
+          <button class="dropbtn" data-menu="ngos">Choose Language▾</button>
+          <div class="dropdown-content" id="ngos">
+            <a href="criteria.html">English</a>
+            <a href="criteriadev.html">Nepali</a>
+          </div>
+        </div>
+    </nav>
+
+    <button class="btn-signing">LogIn</button>
+  </header>
+
+  <body>
+    <div class="cbody">
+      <h1>Essential Blood Donation Guidelines</h1>
+
+      <section class="actions-section">
+        <div id="criteria-text-a">
+          <h2>Mandatory Recovery Intervals (Cooldowns)</h2>
+          <p>
+            To protect donor health and ensure a high-quality blood supply, the
+            platform enforces strict, gender-specific intervals based on
+            international best practices.
+          </p>
+          <ol>
+            <li>
+              <span>Men: </span>You must wait a minimum of 90 days (approx. 12
+              weeks) between donations to ensure full recovery.
+            </li>
+            <li>
+              <span>Women: </span>You must wait a minimum of 120 days (approx.
+              16 weeks) between donations, acknowledging the need for longer
+              iron level recovery.
+            </li>
+            <li>
+              <span>Automated Safety: </span>You will be ineligible for
+              scheduling or SOS alerts until your specific cooldown period has
+              fully elapsed.
+            </li>
+          </ol>
+          <button class="cbutton" onclick="readCriteria_a()">
+            🔊 Listen to Criteria
+          </button>
+        </div>
+
+        <div id="criteria-text-b">
+          <h2>Health & Screening Criteria</h2>
+          <p>
+            While the platform manages logistics, the physical donation is
+            subject to clinical safety standards:
+          </p>
+          <ol>
+            <li>
+              <span>Pre-Donation Screening: </span>
+              Every donor must undergo a standard offline health screening at
+              the blood bank or hospital before the donation takes place.
+            </li>
+            <li>
+              <span>Eligibility Awareness: </span>
+              Potential donors should be aware of barriers like fear or illness
+              that may temporarily prevent donation.
+            </li>
+            <li>
+              <span>Voluntary Focus: </span>
+              We prioritize "Voluntary Non-Remunerated Donors" over "Replacement
+              Donors" (family/friends) to ensure a more stable and safe national
+              supply.
+            </li>
+          </ol>
+          <button class="cbutton" onclick="readCriteria_b()">
+            🔊 Listen to Criteria
+          </button>
+        </div>
+
+        <div id="criteria-text-c">
+          <h2>Operational Expectations</h2>
+          <ol>
+            <li>
+              <span>Validation via QR:</span>
+              Your donation is only officially recorded when a technician scans
+              your unique, HMAC-secured QR code.
+            </li>
+            <li>
+              <span>Double-Entry Verification: </span>
+              For security, the blood bank must also manually confirm the
+              receipt of the blood unit on their dashboard.
+            </li>
+            <li>
+              <span>Geo-Fencing for Emergencies: </span>
+              If you respond to an SOS request, you should ideally be within a
+              10km radius of the requesting hospital to ensure timely delivery.
+            </li>
+          </ol>
+          <button class="cbutton" onclick="readCriteria_c()">
+            🔊 Listen to Criteria
+          </button>
+        </div>
+      </section>
+      <section class="actions-section">
+        <div id="criteria-text-d">
+          <h2>Data Privacy & Ethics</h2>
+          <ol>
+            <li>
+              <span>No Medical Records: </span>The system explicitly does not
+              store sensitive personal health information (PHI) or medical
+              records.
+            </li>
+            <li>
+              <span>Data Minimization: </span>We only track metadata related to
+              the donation event (who, where, and when) to maintain your
+              privacy.
+            </li>
+            <li>
+              <span>Transparency: </span>Donors have the right to view or delete
+              their logistical data at any time.
+            </li>
+          </ol>
+          <button class="cbutton" onclick="readCriteria_d()">
+            🔊 Listen to Criteria
+          </button>
+        </div>
+
+        <div id="criteria-text-e">
+          <h2>The "Why" (Impact Awareness)</h2>
+          <ol>
+            <li>
+              <span>Target Benchmark:</span>
+              Nepal needs 1% of its population (~320,000 units) to donate
+              annually to meet basic needs.
+            </li>
+            <li>
+              <span>Addressing the Chasm: </span>
+              Your donation helps bridge the 90% daily deficit often seen during
+              festival seasons and dengue outbreaks.
+            </li>
+            <li>
+              <span>Reducing Wait Times</span>
+              By following these criteria, you help reduce the current median
+              transfusion delay of 2 hours and 15 minutes
+            </li>
+          </ol>
+          <button class="cbutton" onclick="readCriteria_e()">
+            🔊 Listen to Criteria
+          </button>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+  <footer class="main-footer">
+    <div class="partner-carousel">
+      <p>Our Affiliated Partners</p>
+      <div class="partner-track">
+        <img src="./images/nrcs.png" alt="Partner" />
+        <img src="./images/bir.png" alt="Partner" />
+        <img src="./images/grande.png" alt="Partner" />
+        <img src="./images/nrcs.png" alt="Partner" />
+        <img src="./images/bir.png" alt="Partner" />
+        <img src="./images/grande.png" alt="Partner" />
+        <img src="./images/nrcs.png" alt="Partner" />
+        <img src="./images/bir.png" alt="Partner" />
+        <img src="./images/grande.png" alt="Partner" />
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-content">
+      <div class="footer-column logo-col">
+        <img
+          src="./images/logo.png"
+          alt="RaktaConnect Logo"
+          class="footer-logo"
+        />
+        <p>
+          Connecting lives through every drop. Nepal's most trusted blood
+          donation network.
+        </p>
+      </div>
+
+      <div class="footer-column contact-col">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>📍 Lalitpur, Bagmati, Nepal</li>
+          <li>📞 +977 9841446264</li>
+          <li>✉️ info@raktaconnect.org</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 RaktaConnect. All Rights Reserved.</p>
+    </div>
+  </footer>
+</html>

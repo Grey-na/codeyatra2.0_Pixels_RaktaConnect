@@ -10,6 +10,10 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   const { username, email, phone, password, role } = req.body;
 
+    if(!username || !email || !password || !role) {
+      return res.status(400).json({ message: "Please fill all required fields" });
+  }
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
   db.query(

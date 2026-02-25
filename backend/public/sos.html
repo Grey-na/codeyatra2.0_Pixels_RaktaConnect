@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sos.css" />
+  <title>Create an SOS alert</title>
+
+  <!-- ✅ Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="sos-container">
+    <h2>🚨 Send SOS Alert</h2>
+
+    <form id="sosForm">
+      <div class="input-group">
+        <label>Blood Type Needed</label>
+        <select id="bloodTypeNeeded" required>
+          <option value="">Select Blood Type</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Location</label>
+        <input type="text" id="location" placeholder="e.g. Bir Hospital, Kathmandu" required />
+      </div>
+
+      <div class="input-group">
+        <label>Description</label>
+        <textarea id="description" placeholder="Describe the emergency..." required></textarea>
+      </div>
+
+      <p id="sosError" style="color:red;"></p>
+      <p id="sosSuccess" style="color:green;"></p>
+
+      <button type="submit" class="sos-btn">🚨 Send SOS Alert</button>
+    </form>
+  </div>
+
+ 
+  <script src="sos.js"></script>
+</body>
+</html>
